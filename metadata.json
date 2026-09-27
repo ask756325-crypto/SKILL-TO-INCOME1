@@ -1,0 +1,6 @@
+{
+  "name": "SkillBridge AI - Maharashtra Public Skills & Employment Portal",
+  "description": "Task-first public skills intelligence, career roadmaps, employer matching, and district analytics inspired by Service NSW, GOV.UK, and myScheme.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

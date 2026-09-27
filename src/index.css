@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --civic-navy: #002664;
+    --civic-navy-dark: #00173D;
+    --civic-blue: #0b4abf;
+    --civic-blue-light: #e8f0fe;
+    --civic-charcoal: #1e293b;
+    --civic-warm-bg: #f8f9fa;
+    --civic-surface: #ffffff;
+    --civic-border: #e2e8f0;
+    --civic-amber: #b45309;
+    --civic-emerald: #047857;
+    --civic-saffron: #d97706;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+}
+
+/* High contrast mode */
+.high-contrast {
+  --civic-navy: #000000;
+  --civic-navy-dark: #000000;
+  --civic-blue: #0033cc;
+  --civic-warm-bg: #ffffff;
+  --civic-charcoal: #000000;
+  --civic-border: #000000;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.high-contrast button,
+.high-contrast a {
+  text-decoration-thickness: 2px;
+}
+
+.high-contrast .civic-card {
+  border: 2px solid #000000 !important;
+}
+
+/* Focus styles for keyboard accessibility */
+:focus-visible {
+  outline: 3px solid #ffbf47;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px #002664;
+}
+
+/* Skip link for screen readers */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #002664;
+  color: white;
+  padding: 8px 16px;
+  z-index: 100;
+  transition: top 0.2s;
+  font-weight: 600;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Print / PDF Export Stylesheet */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+  }
+  
+  /* Hide non-printable headers, navigation, footers, and interactive action buttons */
+  header, footer, nav, .no-print, button:not(.print-include) {
+    display: none !important;
+  }
+
+  /* Ensure print document content takes full width without scrollbars */
+  .print-area {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .page-break-after {
+    page-break-after: always;
+  }
+
+  .avoid-break {
+    page-break-inside: avoid;
+  }
+}
+
